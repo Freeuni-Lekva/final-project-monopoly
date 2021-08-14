@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Account</title>
+    <link rel="stylesheet" type="text/css" href="loginStyle.css">
+</head>
+<body>
+<img src="monopolian.png" alt="monopolyman" height="100%" class="monopolianman">
+<img src="money.png" alt="moneycolor" height=220px width=400px class="money">
+<form action="/createAcc" method="post">
+    <div class="createAcc-class">
+        <h2 id="begolden"> Always happy for new users! </h2>
+        <label for="username">Username: </label>
+        <input type="text" name="username" id="username" required pattern="[a-zA-Z_0-9]{6,15}"> <br>
+        <br>
+        <label for="password">Password: </label>
+        <input type="password" name="password" id="password" required pattern="[a-zA-Z_0-9]{8,20}"> <br>
+        <br>
+        <button type="submit" name="create" id="createButton">create account</button>
+    </div>
+</form>
+</body>
+</html>

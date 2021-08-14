@@ -1,0 +1,4 @@
+0:0:0:0:0:0:0:1 - - [15/Aug/2021:00:55:05 +0400] "GET / HTTP/1.1" 304 - http-bio-8080-exec-1 272
+0:0:0:0:0:0:0:1 - - [15/Aug/2021:00:55:05 +0400] "GET /loginStyle.css HTTP/1.1" 304 - http-bio-8080-exec-3 8
+0:0:0:0:0:0:0:1 - - [15/Aug/2021:00:55:05 +0400] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8080-exec-4 50
+0:0:0:0:0:0:0:1 - - [15/Aug/2021:00:55:16 +0400] "POST /createAccPageAccess HTTP/1.1" 200 927 http-bio-8080-exec-5 55
