@@ -65,9 +65,5 @@ public class LeaderboardDAO {
         Map<String, Integer> moneyWon = new HashMap<>();
         return (HashMap<String, Integer>) moneyWon;
     }
-
-    public static void main(String[] arg) throws SQLException {
-        LeaderboardDAO d = new LeaderboardDAO();
-        d.userWon("alikhan");
-    }
+    
 }
