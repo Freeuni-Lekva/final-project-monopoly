@@ -65,5 +65,5 @@ public class LeaderboardDAO {
         Map<String, Integer> moneyWon = new HashMap<>();
         return (HashMap<String, Integer>) moneyWon;
     }
-    
+
 }
