@@ -3,6 +3,7 @@ register/AccountsDao.class
 gamelogic/Player.class
 gamelogic/Room.class
 servlets/CreateAccountServlet.class
+register/Security.class
 servlets/LoginAccessCreate.class
 servlets/LoginServlet.class
 gamelogic/Room$Trade.class

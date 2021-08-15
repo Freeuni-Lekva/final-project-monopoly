@@ -1,4 +1,4 @@
-.login-class {
+.middle-class {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -17,13 +17,6 @@
     top: 50%;
     transform: translate(-50%, -50%);
     border:solid 5px black;
-}
-
-.createAcc-class {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
 }
 
 #begolden {
@@ -46,3 +39,12 @@
 #createAccB:hover{
     transform:  scale(1.4);
 }
+
+#joinButton { transition: all .2s ease-in-out; }
+#joinButton:hover { transform: scale(1.4); }
+
+#createButton { transition: all .2s ease-in-out; }
+#createButton:hover { transform: scale(1.4); }
+
+#leaderboards {transition: all .2s ease-in-out;}
+#leaderboards:hover { transform: scale(1.4); }

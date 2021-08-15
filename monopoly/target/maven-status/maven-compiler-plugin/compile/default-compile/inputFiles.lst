@@ -1,6 +1,7 @@
 /home/cking01201/Desktop/finalproject/final-project-monopoly/monopoly/src/main/java/servlets/CreateAccountServlet.java
 /home/cking01201/Desktop/finalproject/final-project-monopoly/monopoly/src/main/java/servlets/LoginAccessCreate.java
 /home/cking01201/Desktop/finalproject/final-project-monopoly/monopoly/src/main/java/cardTypes/RandomEventCardPile.java
+/home/cking01201/Desktop/finalproject/final-project-monopoly/monopoly/src/main/java/register/Security.java
 /home/cking01201/Desktop/finalproject/final-project-monopoly/monopoly/src/main/java/register/AccountsDao.java
 /home/cking01201/Desktop/finalproject/final-project-monopoly/monopoly/src/main/java/cardTypes/Card.java
 /home/cking01201/Desktop/finalproject/final-project-monopoly/monopoly/src/main/java/servlets/LoginServlet.java

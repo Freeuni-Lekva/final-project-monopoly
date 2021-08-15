@@ -9,11 +9,31 @@
 <html>
 <head>
     <title>Hello Sir</title>
+    <link rel="stylesheet" type="text/css" href="loginStyle.css">
 </head>
 <body>
 <%
     String name = (String) request.getSession().getAttribute("username");
 %>
-Hello <%=name%>
+
+<img src="monopolian.png" alt="monopolyman" height="100%" class="monopolianman">
+<img src="money.png" alt="moneycolor" height=250px width=400px class="money">
+
+<div class="middle-class">
+    <h2 id=begolden> Good luck <%=name%> <h2>
+    <form action="/join-room" method="post">
+        <button type="submit" name="Join" id="joinButton">Join room</button>
+    </form>
+    <br>
+    <form action="/create-room" method="post">
+        <button type = "submit" name="Create room" id="createButton">Create room</button>
+    </form>
+    <br>
+    <form action="/leaderboards" method="post">
+        <button type = "submit" name="leaderboards" id="leaderboards">Leaderboards</button>
+    </form>
+
+</div>
+
 </body>
 </html>
