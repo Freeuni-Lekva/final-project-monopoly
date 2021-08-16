@@ -1,0 +1,50 @@
+.middle-class {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.monopolianman{
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    transform: translate(-50%, 0%);
+}
+.money {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border:solid 5px black;
+}
+
+#begolden {
+    color:goldenrod;
+}
+
+#loginButton { transition: all .2s ease-in-out; }
+#loginButton:hover { transform: scale(1.4); }
+
+#createButton { transition: all .2s ease-in-out; }
+#createButton:hover { transform: scale(1.4); }
+
+#beRed{
+    color: darkred;
+}
+
+#createAccB {
+    transition: all .2s ease-in-out;
+}
+#createAccB:hover{
+    transform:  scale(1.4);
+}
+
+#joinButton { transition: all .2s ease-in-out; }
+#joinButton:hover { transform: scale(1.4); }
+
+#createButton { transition: all .2s ease-in-out; }
+#createButton:hover { transform: scale(1.4); }
+
+#leaderboards {transition: all .2s ease-in-out;}
+#leaderboards:hover { transform: scale(1.4); }

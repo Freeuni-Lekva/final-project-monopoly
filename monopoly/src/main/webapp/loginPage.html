@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="loginStyle.css">
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+
+<body>
+<img src="monopolian.png" alt="monopolyman" height="100%" class="monopolianman">
+<img src="money.png" alt="moneycolor" height=220px width=400px class="money">
+
+<div class="middle-class">
+    <form action="/login" method="post">
+        <label for="username">Username: </label>
+        <input type="text" name="username" id="username" required pattern="[a-zA-Z_0-9]{6,15}"> <br>
+        <br>
+        <label for="password">Password: </label>
+        <input type="password" name="password" id="password" required pattern="[a-zA-Z_0-9]{8,20}"> <br>
+        <br>
+        <button type="submit" name="Login" id="loginButton">Log in</button>
+    </form>
+    <br>
+    <form action="/createAccPageAccess" method="post">
+        <button type = "submit" name="Create Acc" id="createAccB">Create Account</button>
+    </form>
+</div>
+
+
+</body>
+</html>
