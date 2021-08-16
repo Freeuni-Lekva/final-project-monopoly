@@ -1,7 +1,17 @@
 USE database_name_here;
 
+drop table if exists Chat;
 drop table if exists Leaderboard;
 drop table if exists Accounts;
+
+
+create table chat
+(
+    sender varchar(64), receiver varchar(64),
+    message varchar(200), seen int default 0, sendtime timestamp default now()
+);
+
+insert into chat(sender, receiver, message) values('alibaba', 'express', 'ertni vart');
 
 create table Leaderboard(username varchar(64), moneyWon int, timeswon int);
 

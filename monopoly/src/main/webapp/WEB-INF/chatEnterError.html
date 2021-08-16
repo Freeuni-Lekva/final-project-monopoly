@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="loginStyle.css">
+  <meta charset="UTF-8">
+  <title>Chat enter</title>
+</head>
+<body>
+<img src="monopolian.png" alt="monopolyman" height="100%" class="monopolianman">
+<img src="money.png" alt="moneycolor" height=220px width=700px class="money">
+<div class="middle-class">
+  <h3 id="beRed"> Please, enter the correct name </h3>
+  <form action="/chatEnter" method="post">
+    <input type="text" name="user" id="user" required pattern="[a-zA-Z_0-9]{6,15}"></input>
+    <br>
+    <br>
+    <button type="submit" name="chatButton" id="createButton">Start chatting</button>
+  </form>
+  <br>
+  <form action="/enterInbox" method="post">
+    <button type="submit" name="inboxButton" id="createButton"> Check inbox </button>
+  </form>
+</div>
+</body>
+</html>
