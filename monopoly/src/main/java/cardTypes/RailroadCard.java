@@ -7,7 +7,7 @@ public class RailroadCard extends Card {
     /* If the player owns i railroads, then the rent for all his railroads will be rents[i - 1] */
     private int[] rents;
 
-    public RailroadCard(String[] data, int interest) {
+    public RailroadCard(String[] data) {
         cardName = data[0];
         cardImageName = data[1];
         cost = Integer.parseInt(data[2]);
@@ -15,8 +15,6 @@ public class RailroadCard extends Card {
         for (int i = 0; i < rents.length; i++) rents[i] = Integer.parseInt(data[3 + i]);
         mortgageValue = Integer.parseInt(data[7]);
         mortgaged = false;
-        defaultPercentage = 1 + (double)interest / 100;
-        percentage = defaultPercentage;
     }
 
     public int getRent(int railroadsOwned) {

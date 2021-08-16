@@ -1,13 +1,9 @@
 package gamelogic;
 
 
-import cardTypes.Card;
-
-import java.util.Vector;
-
 public class Player {
     private String username;
-    private Vector<Card> cards;
+    private int player_id;
     private int money;
     private int getOutOfJailCards;
     private int turnsArrested;
@@ -16,17 +12,47 @@ public class Player {
     private String eventMessage;
     private String eventImagePath;
     private int eventCost;
-    private int player_id;
     private int tile_num;
     private boolean canMove;
     private boolean waiting;
-    private static final int MAX_TILE_NUM = 40;
-
-
+    private int maxMoney;
 
     public Player(int player_id, String username) {
-        this.player_id = player_id;
         this.username = username;
+        this.player_id = player_id;
+        money = 1500;
+        maxMoney = money;
+        getOutOfJailCards = 0;
+        turnsArrested = 0;
+        pairsRolled = 0;
+        event = "none";
+        eventMessage = "none";
+        eventImagePath = "none";
+        eventCost = 0;
+        tile_num = 0;
+        canMove = true;
+        waiting = false;
+    }
+
+    public int getPlayerId() {
+        return player_id;
+    }
+
+    public void incrementPairsRolled() {
+        pairsRolled++;
+        if (pairsRolled >= 3) turnsArrested++;
+    }
+
+    public int getMaxMoney() {
+        return maxMoney;
+    }
+
+    public void setPairsRolledToZero() {
+        pairsRolled = 0;
+    }
+
+    public int getPairsRolled() {
+        return pairsRolled;
     }
 
     public void addGetOutOfJailCard() {
@@ -67,6 +93,11 @@ public class Player {
 
     public void addMoney(int money) {
         this.money += money;
+        if (this.money > maxMoney) maxMoney = this.money;
+    }
+
+    public int getMoney() {
+        return money;
     }
 
     public void incrementTurnsArrested() {
@@ -102,8 +133,6 @@ public class Player {
     public String getEventImagePath() {
         return eventImagePath;
     }
-
-
 
     public String getUsername() {return username;}
 
