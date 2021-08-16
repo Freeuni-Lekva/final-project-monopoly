@@ -39,26 +39,7 @@
 #createAccB:hover{
     transform:  scale(1.4);
 }
-
-.bottom-class {
-    position: absolute;
-    bottom: 10px;
-    left:50%;
-    transform: translate(-50%, -150%);
-    border: 3px solid #8AC007;
-}
-.some-class {
-    position: absolute;
-    bottom: 10px;
-    left:10%;
-    transform: translate(-50%, -150%);
-    border: 3px solid #8AC007;
-}
-
-#refreshButton { transition: all .2s ease-in-out; }
-#refreshButton:hover { transform: scale(1.4); }
-
-
+/*
 #joinButton { transition: all .2s ease-in-out; }
 #joinButton:hover { transform: scale(1.4); }
 
@@ -67,3 +48,7 @@
 
 #leaderboards {transition: all .2s ease-in-out;}
 #leaderboards:hover { transform: scale(1.4); }
+
+ */
+button { transition: all .2s ease-in-out; }
+button:hover { transform: scale(1.4); }

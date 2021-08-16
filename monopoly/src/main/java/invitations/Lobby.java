@@ -26,6 +26,10 @@ public class Lobby {
         }
 
     }
+    public int getNumPlayers(){
+        return curPlayers.size();
+    }
+
     public boolean isHost(String username){
         return username.equals(host);
     }

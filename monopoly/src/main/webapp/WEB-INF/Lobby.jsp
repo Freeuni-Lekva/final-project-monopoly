@@ -37,5 +37,6 @@
             <button type="submit" id="create" disabled>Start Game</button>
         <%}%>
     </form>
+    <script>setTimeout(function(){window.location.href = window.location.href},2000);</script>
 </body>
 </html>

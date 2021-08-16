@@ -13,7 +13,7 @@ import java.util.HashMap;
 @WebServlet("/lobby")
 public class LobbyServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Lobby lobby = (Lobby) ((HashMap)getServletContext().getAttribute("lobbies")).get(req.getQueryString());
         if(req.getSession().getAttribute("username") == null){
             resp.sendRedirect("/");
@@ -25,5 +25,10 @@ public class LobbyServlet extends HttpServlet {
             req.getRequestDispatcher("/WEB-INF/Lobby.jsp").forward(req, resp);
         }
         System.out.println(req.getQueryString());
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("/WEB-INF/Lobby.jsp").forward(req, resp);
     }
 }
