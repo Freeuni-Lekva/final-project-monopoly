@@ -1,5 +1,6 @@
 package DAO;
 
+import com.mysql.cj.x.protobuf.MysqlxPrepare;
 import org.apache.commons.dbcp.BasicDataSource;
 
 import java.sql.Connection;
@@ -7,7 +8,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Vector;
 
 public class LeaderboardDAO {
     private Connection connection;
@@ -56,14 +59,28 @@ public class LeaderboardDAO {
         }
     }
 
-    public HashMap<String, Integer> topTenWins() {
+    private void fullHashMap(String name, Map<String, Integer> mymap, int column, Vector<String> keys) throws SQLException {
+        PreparedStatement statement = connection.prepareStatement("select * from Leaderboard order by "+ name + " desc;");
+        ResultSet set = statement.executeQuery();
+        int i = 0;
+        while(i != 10 && set.next()) {
+            mymap.put(set.getString(1), set.getInt(column));
+            keys.add(set.getString(1));
+            i++;
+        }
+    }
+
+    public HashMap<String, Integer> topTenWins(Vector<String> keys) throws SQLException {
         Map<String, Integer> winningBoard = new HashMap<>();
+        fullHashMap("timeswon", winningBoard, 3, keys);
         return (HashMap<String, Integer>) winningBoard;
     }
 
-    public HashMap<String, Integer> topTenMoney() {
+    public HashMap<String, Integer> topTenMoney(Vector<String> keys) throws SQLException {
         Map<String, Integer> moneyWon = new HashMap<>();
+        fullHashMap("moneywon", moneyWon, 2, keys);
         return (HashMap<String, Integer>) moneyWon;
     }
+
 
 }

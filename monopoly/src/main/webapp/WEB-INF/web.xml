@@ -14,6 +14,11 @@
   </servlet>
 
   <servlet>
+    <servlet-name>leaderboard-servlet</servlet-name>
+    <servlet-class>servlets.LeaderboardServlet</servlet-class>
+  </servlet>
+
+  <servlet>
     <servlet-name>create-servlet</servlet-name>
     <servlet-class>servlets.CreateAccountServlet</servlet-class>
   </servlet>
@@ -23,9 +28,85 @@
     <servlet-class> servlets.LoginAccessCreate</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>top-money</servlet-name>
+    <servlet-class> servlets.TopMoneyWonServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>chat-enter</servlet-name>
+    <servlet-class> servlets.ChatEnterServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>top-winning</servlet-name>
+    <servlet-class> servlets.TopWinningCountServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>refresh-chat</servlet-name>
+    <servlet-class> servlets.RefreshServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>chat-servlet</servlet-name>
+    <servlet-class> servlets.ChatServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>sender-servlet</servlet-name>
+    <servlet-class> servlets.SendMessageServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>inbox-servlet</servlet-name>
+    <servlet-class> servlets.CheckInboxServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>inbox-servlet</servlet-name>
+    <url-pattern>/enterInbox</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>sender-servlet</servlet-name>
+    <url-pattern>/sendMessage</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>chat-servlet</servlet-name>
+    <url-pattern>/chatEnter</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>refresh-chat</servlet-name>
+    <url-pattern>/refresh</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>top-winning</servlet-name>
+    <url-pattern>/winLeaders</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>chat-enter</servlet-name>
+    <url-pattern>/chat</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>top-money</servlet-name>
+    <url-pattern>/moneyLeaders</url-pattern>
+  </servlet-mapping>
+
+
   <servlet-mapping>
     <servlet-name>login-to-create</servlet-name>
     <url-pattern>/createAccPageAccess</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>leaderboard-servlet</servlet-name>
+    <url-pattern>/leaderboards</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
