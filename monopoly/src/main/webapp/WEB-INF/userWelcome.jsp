@@ -20,18 +20,34 @@
     <img src="money.png" alt="moneycolor" height=300px width=400px class="money">
 
     <div class="middle-class">
-        <h2 id=begolden> Good luck <%=name%> <h2>
-        <form action="/join-room" method="post">
-            <button type="submit" name="Join" id="joinButton">Join room</button>
-        </form>
+        
+        <h2 id=begolden> Good luck <%=name%> </h2>
 
-        <form action="/create-room" method="post">
-            <button type = "submit" name="Create room" id="createButton">Create room</button>
-        </form>
-
-        <form action="/leaderboards" method="post">
-            <button type = "submit" name="leaderboards" id="leaderboards">Leaderboards</button>
-        </form>
+	    <form method="post" action="/friends">
+		<button type="submit" >See friends</button>
+	    </form>
+	    <br>
+	    <form method="post" action="/friendRequests">
+		<button type="submit" >See friend requests</button>
+	    </form>
+	    <br>
+	    <form method="post" action="/invitations">
+		<button type="submit">See invitations</button>
+	    </form>
+	    <br>
+	    <form action="/leaderboards" method="post">
+		<button type = "submit" name="leaderboards" id="leaderboards">Leaderboards</button>
+	    </form>
+	    <br>
+	    <form method="post" action="lobbyCreation">
+		<button type="submit">Create Lobby</button>
+	    </form>
+	    <br>
+	    <form method="post" action="/sendRequest">
+		<input type="text" name="newFriend"><br/>
+		<button type="submit" >Add a friend</button>
+	    </form>
+        
 
         <form action="/chat" method="post">
             <button type = "submit" name="chatButton" id="leaderBoards"> Chat someone </button>

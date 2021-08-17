@@ -1,5 +1,5 @@
 -- !!!!!!!! write your database name here !!!!!!!!
-USE database_name_here;
+USE accounts;
 
 DROP TABLE IF EXISTS property_cards;
 

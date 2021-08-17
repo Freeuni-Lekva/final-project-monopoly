@@ -1,8 +1,10 @@
-USE database_name_here;
+USE accounts;
 
 drop table if exists Chat;
 drop table if exists Leaderboard;
 drop table if exists Accounts;
+
+
 
 
 create table chat
