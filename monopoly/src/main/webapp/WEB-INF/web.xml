@@ -63,6 +63,81 @@
     <servlet-class> servlets.CheckInboxServlet</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>card-update-servlet</servlet-name>
+    <servlet-class>servlets.CardUpdateServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>players-turn-servlet</servlet-name>
+    <servlet-class>servlets.PlayersTurnServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>offer-servlet</servlet-name>
+    <servlet-class>servlets.OfferServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>demand-servlet</servlet-name>
+    <servlet-class>servlets.DemandServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>end-turn-servlet</servlet-name>
+    <servlet-class>servlets.EndTurnServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>trade-confirm-servlet</servlet-name>
+    <servlet-class>servlets.TradeConfirmServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>trade-created-servlet</servlet-name>
+    <servlet-class>servlets.TradeCreatedServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>paying-event-servlet</servlet-name>
+    <servlet-class>servlets.PayingEventServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>unoccupied-property-servlet</servlet-name>
+    <servlet-class>servlets.UnoccupiedPropertyServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>bankruptcy-servlet</servlet-name>
+    <servlet-class>servlets.BankruptcyServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>move-servlet</servlet-name>
+    <servlet-class>servlets.MoveServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>get-out-of-jail-servlet</servlet-name>
+    <servlet-class>servlets.GetOutOfJailServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>non-interactive-event-servlet</servlet-name>
+    <servlet-class>servlets.NonInteractiveEventServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>nearest-utility-owned-servlet</servlet-name>
+    <servlet-class>servlets.NearestUtilityOwnedServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>return-to-menu-servlet</servlet-name>
+    <servlet-class>servlets.ReturnToMenuServlet</servlet-class>
+  </servlet>
+
   <servlet-mapping>
     <servlet-name>inbox-servlet</servlet-name>
     <url-pattern>/enterInbox</url-pattern>
@@ -117,6 +192,81 @@
   <servlet-mapping>
     <servlet-name>create-servlet</servlet-name>
     <url-pattern>/createAcc</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>card-update-servlet</servlet-name>
+    <url-pattern>/cards-updated</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>players-turn-servlet</servlet-name>
+    <url-pattern>/your-turn</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>offer-servlet</servlet-name>
+    <url-pattern>/offer</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>demand-servlet</servlet-name>
+    <url-pattern>/demand</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>end-turn-servlet</servlet-name>
+    <url-pattern>/wait-for-your-turn</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>trade-confirm-servlet</servlet-name>
+    <url-pattern>/trade-decided</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>trade-created-servlet</servlet-name>
+    <url-pattern>/trade-created</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>paying-event-servlet</servlet-name>
+    <url-pattern>/paying-event-completed</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>unoccupied-property-servlet</servlet-name>
+    <url-pattern>/unoccupied-property-purchased</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>bankruptcy-servlet</servlet-name>
+    <url-pattern>/conceded</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>move-servlet</servlet-name>
+    <url-pattern>/moved</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>get-out-of-jail-servlet</servlet-name>
+    <url-pattern>/free-from-jail</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>non-interactive-event-servlet</servlet-name>
+    <url-pattern>/event-done</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>nearest-utility-owned-servlet</servlet-name>
+    <url-pattern>/nearest-utility-is-owned</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>return-to-menu-servlet</servlet-name>
+    <url-pattern>/returned-to-menu</url-pattern>
   </servlet-mapping>
 
   <listener>

@@ -1,0 +1,469 @@
+* {
+    margin: 0;
+}
+
+.confirm-bankruptcy {
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 60;
+}
+
+.yes-no-buttons {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, 0) scale(2.2);
+    display: flex;
+    flex-direction: row;
+}
+
+.yes-no-buttons button {
+    position: relative;
+    margin: 7px;
+    cursor: pointer;
+}
+
+.confirm-bankruptcy p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: red;
+    font: bold 2.3vw "serif";
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+#board {
+    position: absolute;
+    height: 200%;
+    padding-right: 25%;
+}
+
+.left-panel {
+    background-color: lightgray;
+    left: 75%;
+    top: 0;
+    height: 100%;
+    width: 25%;
+    position: fixed;
+    border-left: 7px solid black;
+}
+
+.left-panel p {
+    position: relative;
+    top: 10%;
+    left: 10%;
+    font: bold 2vw "serif";
+}
+
+.buttons button {
+    margin: 5px;
+    top: 50%;
+    left: 50%;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 3px 3px #999;
+    border-radius: 3px;
+    transform: scale(1.1) translate(-50%, -50%);
+}
+
+.buttons {
+    margin: 5px;
+    top: 40%;
+    left: 47%;
+    position: relative;
+    transform: translate(-50%, -50%);
+}
+
+.dice img {
+    position: relative;
+    left: 10%;
+    top: 10%;
+    width: 40%;
+    transform: scale(0.7);
+}
+
+.dice img.spin {
+    animation: spin-die 100ms;
+    animation-iteration-count: 3;
+}
+
+@keyframes spin-die {
+    from {
+        transform: scale(0.7) rotate(0deg);
+    }
+    to {
+        transform: scale(0.7) rotate(360deg);
+    }
+}
+
+.image-container img {
+    cursor: pointer;
+    margin: 10px;
+    width: 150px;
+    height: 199px;
+}
+
+.image-container {
+    background: rgba(0, 0, 0, 0.7);
+    top: 0;
+    left: 0;
+    width: 75%;
+    height: 100%;
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    overflow-y: scroll;
+    z-index: 40;
+}
+
+.image-container img.select {
+    margin: 5px;
+    border: 5px solid #35ff10;
+}
+
+.back-button-container button {
+    position: relative;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#return-button {
+    left: 2%;
+    top: 2%;
+    cursor: pointer;
+    box-shadow: -3px 3px #999;
+    border-radius: 3px;
+    position: relative;
+}
+
+.card-display {
+    background: rgba(0, 0, 0, 0.9);
+    top: 0;
+    left: 0;
+    width: 75%;
+    height: 100%;
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 50;
+}
+
+.card-display img {
+    position: absolute;
+    height: 60%;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#description {
+    position: absolute;
+    top: 73%;
+    left: 50%;
+    color: white;
+    font: bold 2vw "serif";
+    transform: translate(-50%, 0);
+}
+
+#card-display-money {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    color: white;
+    font: bold 2vw "serif";
+    transform: translate(0, -50%);
+}
+
+.card-buttons {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.card-buttons button {
+    margin: 7px;
+    top: 50%;
+    left: 50%;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 3px 3px #999;
+    border-radius: 3px;
+    transform: scale(1.1) translate(-50%, -50%);
+}
+
+.rules {
+    border-left: 7px solid black;
+    background: lightcyan;
+    left: 75%;
+    top: 0;
+    height: 100%;
+    width: 25%;
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    overflow-y: scroll;
+    z-index: 30;
+}
+
+.rules p {
+    margin: 5px;
+    background: lightcyan;
+    position: relative;
+    top: 10px;
+}
+
+.rules button {
+    margin: 5px;
+    left: 2%;
+    top: 10px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: -3px 3px #999;
+    border-radius: 3px;
+    transform: scale(1.1);
+}
+
+.circles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.circles img {
+    position: absolute;
+}
+
+.arrested {
+    background-color: orange;
+    left: 75%;
+    top: 0;
+    height: 100%;
+    width: 25%;
+    position: fixed;
+    border-left: 7px solid black;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9;
+}
+
+.arrested p {
+    position: relative;
+    top: 10%;
+    left: 0;
+    font: bold 2vw "serif";
+    text-align: center;
+}
+
+.jail-buttons button {
+    margin: 5px;
+    top: 50%;
+    left: 50%;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 3px 3px #999;
+    border-radius: 3px;
+    transform: scale(1.1) translate(-50%, -50%);
+}
+
+.jail-buttons {
+    margin: 5px;
+    top: 40%;
+    left: 47%;
+    position: relative;
+    transform: translate(-50%, -50%);
+}
+
+.jail-dice img {
+    position: relative;
+    left: 10%;
+    top: 10%;
+    width: 40%;
+    transform: scale(0.7);
+}
+
+.jail-dice img.spin {
+    animation: spin-die 100ms;
+    animation-iteration-count: 3;
+}
+
+.event-window {
+    background: rgba(0, 0, 0, 0.9);
+    top: 0;
+    left: 0;
+    width: 75%;
+    height: 100%;
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 30;
+}
+
+#purchase-image {
+    position: absolute;
+    height: 60%;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#purchase-message {
+    color: white;
+    font: bold 2vw "serif";
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#purchase-button {
+    cursor: pointer;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, 0) scale(1.2);
+}
+
+#purchase-cancel-button {
+    cursor: pointer;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+}
+
+#paying-event-message {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    color: white;
+    font: bold 2vw "serif";
+    transform: translate(-50%, 0);
+}
+
+#paying-event-image {
+    position: absolute;
+    top: 17%;
+    left: 50%;
+    height: 50%;
+    transform: translate(-50%, 0);
+}
+
+#pay-button {
+    cursor: pointer;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, 0) scale(1.3);
+}
+
+#awaiting-message {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    color: white;
+    font: bold 3vw "serif";
+    transform: translate(-50%, 0);
+}
+
+#waiting-image {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    height: 50%;
+    background-color: white;
+    transform: translate(-50%, 0);
+}
+
+#trade-decided-message {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    color: white;
+    font: bold 3vw "serif";
+    transform: translate(-50%, 0);
+}
+
+#trade-decided-button {
+    cursor: pointer;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    width: 8%;
+    transform: translate(-50%, 0) scale(1.5);
+}
+
+#non-interactive-event-message {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    color: white;
+    font: bold 2vw "serif";
+    transform: translate(-50%, 0);
+}
+
+#non-interactive-event-image {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    height: 50%;
+    transform: translate(-50%, 0);
+}
+
+#non-interactive-event-button {
+    cursor: pointer;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    width: 7%;
+    transform: translate(-50%, 0) scale(1.2);
+}
+
+#negative-money-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    font: bold 3vw "serif";
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+#utility-owned-message {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    color: white;
+    font: bold 2vw "serif";
+    transform: translate(-50%, 0);
+}
+
+#utility-owned-img {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    height: 50%;
+    transform: translate(-50%, 0);
+}
+
+#utility-owned-pay-button {
+    cursor: pointer;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, 0) scale(1.2);
+}
+
+.display {
+    opacity: 1;
+    pointer-events: all;
+}

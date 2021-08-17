@@ -17,7 +17,7 @@ public class PropertyCard extends Card {
     private int numHouses;
     private int colorSetSize;
 
-    public PropertyCard(String[] data, int interest) {
+    public PropertyCard(String[] data) {
         cardName = data[0];
         cardImageName = data[1];
         cardColor = data[2];
@@ -32,8 +32,6 @@ public class PropertyCard extends Card {
         colorSetSize = Integer.parseInt(data[14]);
         numHouses = 0;
         mortgaged = false;
-        defaultPercentage = 1 + (double)interest / 100;
-        percentage = defaultPercentage;
     }
 
     public int getRent(int cardsInColorSetOwned) {
@@ -44,6 +42,12 @@ public class PropertyCard extends Card {
             rent = colorSetRent;
         }
         return rent;
+    }
+
+    @Override
+    public void setMortgage(boolean mortgaged) {
+        super.setMortgage(mortgaged);
+        if (mortgaged) setNumHouses(0);
     }
 
     public String getCardColor() {

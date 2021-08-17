@@ -1,6 +1,5 @@
 package cardTypes;
 
-import java.sql.SQLException;
 import java.util.Random;
 import java.util.Vector;
 
@@ -20,12 +19,14 @@ public class RandomEventCardPile {
     private Vector<String> drawPile;
     private Vector<String> discardPile;
     private Random rand;
+    private int originalSize;
 
-    public RandomEventCardPile(Vector<String> cards, String getOutOfJail) throws SQLException {
+    public RandomEventCardPile(Vector<String> cards, String getOutOfJail) {
         drawPile = cards;
         discardPile = new Vector<>();
         rand = new Random();
         this.getOutOfJail = getOutOfJail;
+        originalSize = drawPile.size();
     }
 
     /* Returns a random card from the drawPile */
@@ -46,6 +47,10 @@ public class RandomEventCardPile {
     public void addGetOutOfJail() {
         if (!drawPile.contains(getOutOfJail) && !discardPile.contains(getOutOfJail))
             discardPile.add(getOutOfJail);
+    }
+
+    public boolean containsGetOutOfJailCard() {
+        return !(drawPile.size() + discardPile.size() < originalSize);
     }
 
 }
