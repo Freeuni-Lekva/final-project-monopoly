@@ -1,6 +1,8 @@
 package DAO;
 
+import jdk.internal.net.http.common.Pair;
 import org.apache.commons.dbcp.BasicDataSource;
+import register.AccountsDao;
 
 
 import java.sql.*;
@@ -9,48 +11,27 @@ import java.util.ArrayList;
 public class UserDAO {
     BasicDataSource dataSource;
     Connection connection;
+    AccountsDao accountsDao;
     public UserDAO(String url, String username, String password) throws SQLException {
         dataSource = new BasicDataSource();
         dataSource.setUrl(url);
         dataSource.setUsername(username);
         dataSource.setPassword(password);
         connection = dataSource.getConnection();
-    }
 
-    public Boolean validateUser(String username,String password) throws SQLException {
-        if(username == null || password == null) throw new NullPointerException();
-        PreparedStatement statement = connection.prepareStatement("select * from users where username = ? and pwd = ?");
-        statement.setString(1,username);
-        statement.setString(2,password);
-        ResultSet result = statement.executeQuery();
-        if(!result.next()) return false;
-        return true;
-    }
-
-    public boolean registerUser(String username,String password) throws SQLException {
-        if(username == null || password == null) throw new NullPointerException();
-        PreparedStatement check = connection.prepareStatement("select * from users where username = ?");
-        check.setString(1,username);
-        ResultSet rs = check.executeQuery();
-        if(rs.next()) return false;
-        PreparedStatement statement = connection.prepareStatement("insert into users (username,pwd) values (?,?)");
-        statement.setString(1,username);
-        statement.setString(2,password);
-        statement.executeUpdate();
-        return true;
+        accountsDao = new AccountsDao();
     }
 
     public Object[] getUserData(String username) throws Exception {
         if(!this.isUser(username)) throw new Exception();
 
-        Object[] ret = new Object[4];
+        Object[] ret = new Object[5];
         ret[0] = username;
 
         ret[1] = new ArrayList<String>();
         PreparedStatement statement = connection.prepareStatement("select username2 from friendPairs where username1 = ?");
         statement.setString(1,username);
         ResultSet rs = statement.executeQuery();
-        System.out.println(username);
         while (rs.next()) {
             ((ArrayList)ret[1]).add(rs.getString("username2"));
         }
@@ -69,6 +50,14 @@ public class UserDAO {
         ResultSet rs2 = statement2.executeQuery();
         while (rs2.next()) {
             ((ArrayList)ret[3]).add(rs2.getString("lobby"));
+        }
+
+        ret[4] = new ArrayList<String>();
+        PreparedStatement statement3 = connection.prepareStatement("select inviter from invitations where username = ?");
+        statement3.setString(1,username);
+        ResultSet rs3 = statement2.executeQuery();
+        while (rs3.next()) {
+            ((ArrayList)ret[4]).add(rs3.getString(1));
         }
 
         return ret;
@@ -120,18 +109,22 @@ public class UserDAO {
     }
 
     public boolean isUser(String username) throws Exception {
-        if(username == null) throw new NullPointerException();
-        PreparedStatement statement = connection.prepareStatement("select * from users where username = ?");
-        statement.setString(1,username);
-        ResultSet rs = statement.executeQuery();
-        return rs.next();
+        return accountsDao.userExists(username);
     }
 
-    public void addInvitation(String lobby,String username) throws Exception {
+    public void addInvitation(String lobby,String username, String inviter) throws Exception {
         if(!this.isUser(username)) throw new NullPointerException();
-        PreparedStatement statement = connection.prepareStatement("insert into invitations (lobby, username) values (?,?)");
+        PreparedStatement statement = connection.prepareStatement("insert into invitations (lobby, username, inviter)" +
+                " values (?,?,?)");
         statement.setString(1,lobby);
         statement.setString(2,username);
+        statement.setString(3, inviter);
         statement.executeUpdate();
+    }
+
+    public void removeInvitation(String lobby) throws SQLException {
+        PreparedStatement statement = connection.prepareStatement("delete from invitations where lobby = ?");
+        statement.setString(1, lobby);
+        statement.execute();
     }
 }

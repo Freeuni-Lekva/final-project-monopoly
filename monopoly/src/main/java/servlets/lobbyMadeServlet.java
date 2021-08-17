@@ -27,9 +27,14 @@ public class lobbyMadeServlet extends HttpServlet {
             Lobby lobby = new Lobby((String) req.getSession().getAttribute("username"),invitedUsers,((UserBuilder) getServletContext().getAttribute("userBuilder")));
             ((HashMap)getServletContext().getAttribute("lobbies")).put(lobby.getKey(),lobby);
             req.getSession().setAttribute("room-code", lobby.getKey());
-            resp.sendRedirect("/lobby?"+lobby.getKey());
+            req.getRequestDispatcher("WEB-INF/Lobby.jsp").forward(req, resp);
         } catch (Exception exception) {
             exception.printStackTrace();
         }
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("WEB-INF/Lobby.jsp").forward(req, resp);
     }
 }

@@ -10,9 +10,9 @@ public class AccountsDao {
 
     public AccountsDao() throws SQLException{
         BasicDataSource dSource = new BasicDataSource();
-        dSource.setUrl("jdbc:mysql://localhost:3306/accounts");
-        dSource.setUsername("root");
-        dSource.setPassword("rootroot");
+        dSource.setUrl("jdbc:mysql://localhost:3306/database_name_here");
+        dSource.setUsername("user_name_here");
+        dSource.setPassword("password_here");
         con = dSource.getConnection();
     }
 
@@ -38,10 +38,6 @@ public class AccountsDao {
 
     public boolean addAccount(String user, String password) throws SQLException {
         if(userExists(user)) return false;
-        for(int i = 0; i < user.length(); i++) {
-            if(user.charAt(i) == ' ') return false;
-        }
-        //user already exists or not good enough for requirements
         PreparedStatement statement = con.prepareStatement("insert into Accounts values(?, ?)");
         statement.setString(1, user);
         statement.setString(2, password);

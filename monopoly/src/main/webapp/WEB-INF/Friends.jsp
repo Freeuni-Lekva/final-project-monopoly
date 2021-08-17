@@ -18,7 +18,7 @@
     <ul>
     <%
         UserBuilder userBuilder = (UserBuilder) getServletConfig().getServletContext().getAttribute("userBuilder");
-        User user = userBuilder.getInstance((String)request.getSession().getAttribute("user"));
+        User user = userBuilder.getInstance((String)request.getSession().getAttribute("username"));
         ArrayList<String> friends = user.getFriends();
         for (String friend : friends) {%>
             <li>

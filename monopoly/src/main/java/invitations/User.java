@@ -2,11 +2,9 @@ package invitations;
 
 import DAO.UserDAO;
 
-import javax.servlet.ServletContext;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Objects;
 
 public class User {
     public  String username;
@@ -14,22 +12,11 @@ public class User {
     private UserBuilder userBuilder;
     private ArrayList<String> friends;
     private ArrayList<String> friendRequests;
-    private ArrayList<String> invitations;
-
-    public User(String username, Collection<String> friends, Collection<String> friendRequests,Collection<String> invitations,UserBuilder userBuilder,UserDAO userDAO){
-        this.username = username;
-        this.friends = new ArrayList<>(friends);
-        this.friendRequests = new ArrayList<>(friendRequests);
-        this.invitations = new ArrayList<>(invitations);
-        this.userBuilder = userBuilder;
-        this.userDAO=userDAO;
-    }
 
     public User(String username,UserBuilder userBuilder,UserDAO userDAO){
         this.username = username;
         this.friends = new ArrayList<>();
         this.friendRequests = new ArrayList<>();
-        this.invitations = new ArrayList<>();
         this.userBuilder = userBuilder;
         this.userDAO=userDAO;
     }
@@ -104,16 +91,20 @@ public class User {
         }
     }
 
-    public void  addInvitation(String lobby){
-       invitations.add(lobby);
+    public void  addInvitation(String lobby, String inviter) throws Exception {
+       userDAO.addInvitation(lobby, username, inviter);
     }
 
-    public void  removeInvitation(String lobby){
-        invitations.remove(lobby);
+    public void  removeInvitation(String lobby) throws SQLException {
+        userDAO.removeInvitation(lobby);
     }
 
-    public ArrayList<String> getInvitations(){
-        return invitations;
+    public ArrayList<String> getInvitationCodes() throws Exception {
+        return (ArrayList<String>) userDAO.getUserData(username)[3];
+    }
+
+    public ArrayList<String> getInviters() throws Exception {
+        return (ArrayList<String>) userDAO.getUserData(username)[4];
     }
 
     public ArrayList<String> getFriendRequests() {

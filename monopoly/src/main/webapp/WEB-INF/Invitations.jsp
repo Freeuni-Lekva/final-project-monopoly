@@ -1,5 +1,6 @@
 <%@ page import="invitations.User" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="jdk.internal.net.http.common.Pair" %>
 <%@ page import="invitations.UserBuilder" %><%--
   Created by IntelliJ IDEA.
   User: Aernd
@@ -17,12 +18,14 @@
     <ul>
     <%
         UserBuilder userBuilder = ((UserBuilder)getServletConfig().getServletContext().getAttribute("userBuilder"));
-        User user = userBuilder.getInstance((String)session.getAttribute("user"));
-        ArrayList<String> invs = user.getInvitations();
-        for (String invitation : invs) {
-            String url = "/lobby?" + invitation ;
+        User user = userBuilder.getInstance((String)session.getAttribute("username"));
+        ArrayList<String> invCodes = user.getInvitationCodes();
+        ArrayList<String> inviters = user.getInviters();
+        for (int i = 0; i < invCodes.size(); i++) {
             %>
-        <li><a href = <%out.print(url);%>><%out.print(invitation);%></a></li>
+        <form method="post" action="/lobby">
+            <li><button type="submit" name="invitation" value=<%=invCodes.get(i)%>><%=inviters.get(i)%></button></li>
+        </form>
     <%
         }
     %>

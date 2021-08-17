@@ -8,8 +8,11 @@ import invitations.UserBuilder;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class ContextListener implements ServletContextListener {
     @Override
@@ -23,7 +26,8 @@ public class ContextListener implements ServletContextListener {
             CardsDAO cDao = new CardsDAO();
             servletContextEvent.getServletContext().setAttribute("cDao", cDao);
 
-            UserDAO userDAO = new UserDAO("jdbc:mysql://localhost:3306/monopoly","root","makeitsecure");
+            UserDAO userDAO = new UserDAO("jdbc:mysql://localhost:3306/database_name_here","user_name_here",
+                    "password_here");
             servletContextEvent.getServletContext().setAttribute("usersDAO",userDAO);
             UserBuilder userBuilder = new UserBuilder(userDAO);
             servletContextEvent.getServletContext().setAttribute("userBuilder",userBuilder);
@@ -31,7 +35,17 @@ public class ContextListener implements ServletContextListener {
             servletContextEvent.getServletContext().setAttribute("lobbies",lobbies);
             HashMap<String, Room> rooms = new HashMap<>();
             servletContextEvent.getServletContext().setAttribute("rooms",rooms);
+
+            // !!!!!! Enter the path of the project here !!!!!!
+            File file = new File("PROJECT_PATH_HERE!!!/monopoly/src/rules.txt");
+            Scanner scanner = new Scanner(file);
+            String rules = "";
+            while (scanner.hasNextLine()) rules += scanner.nextLine() + "<br>";
+            rules += "<br>";
+            servletContextEvent.getServletContext().setAttribute("rules", rules);
         } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     }

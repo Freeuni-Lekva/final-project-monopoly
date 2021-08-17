@@ -1,6 +1,7 @@
 package servlets;
 
 import invitations.Lobby;
+import invitations.UserBuilder;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,17 +15,15 @@ import java.util.HashMap;
 public class LobbyServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Lobby lobby = (Lobby) ((HashMap)getServletContext().getAttribute("lobbies")).get(req.getQueryString());
-        if(req.getSession().getAttribute("username") == null){
-            resp.sendRedirect("/");
+        String roomCode = req.getParameter("invitation");
+        req.getSession().setAttribute("room-code", roomCode);
+        try {
+            ((UserBuilder)getServletContext().getAttribute("userBuilder")).
+                    getInstance((String) req.getSession().getAttribute("username")).removeInvitation(roomCode);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        else if(!lobby.containsUser((String) req.getSession().getAttribute("username"))){
-            resp.sendRedirect("/");
-        }
-        else{
-            req.getRequestDispatcher("/WEB-INF/Lobby.jsp").forward(req, resp);
-        }
-        System.out.println(req.getQueryString());
+        req.getRequestDispatcher("WEB-INF/Lobby.jsp").forward(req, resp);
     }
 
     @Override

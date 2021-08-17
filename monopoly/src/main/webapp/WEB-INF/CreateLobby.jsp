@@ -17,9 +17,9 @@
         <ul class = "classList">
         <%
         UserBuilder ub = (UserBuilder) getServletConfig().getServletContext().getAttribute("userBuilder");
-        ArrayList<String> friends = ub.getInstance((String)request.getSession().getAttribute("user")).getFriends();
+        ArrayList<String> friends = ub.getInstance((String)request.getSession().getAttribute("username")).getFriends();
         for (String friend : friends) {%>
-        <li><input type="checkbox" name="<%out.print(friend);%>"> <%out.print(friend);%></li>
+        <li><input type="checkbox" name="<%=friend%>"> <%=friend%></li>
 
         <%}%></ul>
         <input id="create" type="submit" value="Create!">

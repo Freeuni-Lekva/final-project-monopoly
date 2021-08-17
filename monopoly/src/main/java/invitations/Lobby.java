@@ -18,16 +18,12 @@ public class Lobby {
         key = UUID.randomUUID().toString();
         for (String user : invitedPlayers) {
             try {
-                System.out.println(userBuilder.getInstance(user) + "user iiisss" + user);
-                userBuilder.getInstance(user).addInvitation(key);
+                userBuilder.getInstance(user).addInvitation(key, host);
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         }
 
-    }
-    public int getNumPlayers(){
-        return curPlayers.size();
     }
 
     public boolean isHost(String username){

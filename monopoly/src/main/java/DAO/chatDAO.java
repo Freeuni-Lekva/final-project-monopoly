@@ -19,9 +19,9 @@ public class chatDAO {
         myName = name;
         this.user = user;
         BasicDataSource dataSource = new BasicDataSource();
-        dataSource.setUrl("jdbc:mysql://localhost:3306/accounts");
-        dataSource.setUsername("root");
-        dataSource.setPassword("rootroot");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/database_name_here");
+        dataSource.setUsername("user_name_here");
+        dataSource.setPassword("password_here");
         connection = dataSource.getConnection();
     }
 
