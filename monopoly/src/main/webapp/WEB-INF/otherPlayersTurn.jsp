@@ -87,7 +87,7 @@
   <% } else if (event.equals("victory")) { %>
     <div class="victory-screen">
       <p id="victory-message"><%=victoryMessage%></p>
-      <form action="post" method="/returned-to-menu">
+      <form action="/returned-to-menu" method="post">
         <button id="return-to-menu" type="submit">Return To Main Menu</button>
       </form>
     </div>

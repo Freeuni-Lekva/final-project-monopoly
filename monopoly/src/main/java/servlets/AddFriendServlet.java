@@ -11,6 +11,8 @@ import java.io.IOException;
 
 @WebServlet("/sendRequest")
 public class AddFriendServlet extends HttpServlet {
+
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username1 = req.getParameter("newFriend");

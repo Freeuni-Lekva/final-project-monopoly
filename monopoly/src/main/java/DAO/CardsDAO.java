@@ -15,9 +15,9 @@ public class CardsDAO {
     public CardsDAO() throws SQLException {
         BasicDataSource dataSource = new BasicDataSource();
         /* !!!!!!!!!!! Add your database name, your user name and your password here !!!!!!! */
-        dataSource.setUrl("jdbc:mysql://localhost:3306/database_name_here");
-        dataSource.setUsername("user_name_here");
-        dataSource.setPassword("password_here");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/accounts");
+        dataSource.setUsername("root");
+        dataSource.setPassword("rootroot");
         connection = dataSource.getConnection();
     }
 

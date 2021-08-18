@@ -3,6 +3,7 @@ package servlets;
 import gamelogic.Room;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,7 +18,6 @@ public class ReturnToMenuServlet extends HttpServlet {
         Map<String, Room> rooms = (HashMap<String, Room>) getServletContext().getAttribute("rooms");
         if (rooms.containsKey(httpServletRequest.getSession().getAttribute("room-code")))
             rooms.remove(httpServletRequest.getSession().getAttribute("room-code"));
-        httpServletRequest.getRequestDispatcher("WEB-INF/userWelcome.jsp")
-                .forward(httpServletRequest, httpServletResponse);
+        httpServletRequest.getRequestDispatcher("/WEB-INF/userWelcome.jsp").forward(httpServletRequest, httpServletResponse);
     }
 }

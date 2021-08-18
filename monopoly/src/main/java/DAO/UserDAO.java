@@ -55,7 +55,7 @@ public class UserDAO {
         ret[4] = new ArrayList<String>();
         PreparedStatement statement3 = connection.prepareStatement("select inviter from invitations where username = ?");
         statement3.setString(1,username);
-        ResultSet rs3 = statement2.executeQuery();
+        ResultSet rs3 = statement3.executeQuery();
         while (rs3.next()) {
             ((ArrayList)ret[4]).add(rs3.getString(1));
         }
@@ -80,6 +80,18 @@ public class UserDAO {
         query1.setString(1,username2);
         query1.setString(2,username1);
         query1.executeUpdate();
+    }
+
+    public boolean friendsPairExists(String username1, String username2) throws SQLException{
+        PreparedStatement statement = connection.prepareStatement("select * from friendPairs " +
+                "where (username1 = ? AND username2 = ?) OR (username2 = ? AND username1 = ?);");
+        statement.setString(1, username1);
+        statement.setString(2, username2);
+        statement.setString(3, username1);
+        statement.setString(4, username2);
+        ResultSet res = statement.executeQuery();
+        if(res.next()) return true;
+        return false;
     }
 
     public void addRequestPair(String username1,String username2) throws Exception {

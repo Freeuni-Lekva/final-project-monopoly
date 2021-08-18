@@ -11,6 +11,11 @@ import java.sql.SQLException;
 
 public class ChatServlet extends HttpServlet {
     @Override
+    protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
+        httpServletRequest.getRequestDispatcher("/WEB-INF/displayChat.jsp").forward(httpServletRequest,httpServletResponse);
+    }
+
+    @Override
     protected void doPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
         String username = (String) httpServletRequest.getParameter("user");
         try {

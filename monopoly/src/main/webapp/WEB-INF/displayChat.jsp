@@ -13,7 +13,6 @@
     <title>Chat</title>
 </head>
 <body>
-<img src="chatFrame.jpg" alt="chatFrame" height="100%" class="monopolianman">
 <%
     chatDAO dao = new chatDAO((String) request.getSession().getAttribute("username"),
             (String) request.getSession().getAttribute("receiver"));
@@ -21,6 +20,7 @@
     Vector<String> messages = new Vector<String>();
     dao.getMessages(senders, messages);
 %>
+
 
 
 

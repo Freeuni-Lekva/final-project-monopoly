@@ -10,7 +10,10 @@ import register.Security;
 
 
 public class CreateAccountServlet extends HttpServlet {
-
+    @Override
+    protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
+        httpServletRequest.getRequestDispatcher("createAccount.html").forward(httpServletRequest,httpServletResponse);
+    }
 
     @Override
     protected void doPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {

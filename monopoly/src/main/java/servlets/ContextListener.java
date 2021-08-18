@@ -26,8 +26,8 @@ public class ContextListener implements ServletContextListener {
             CardsDAO cDao = new CardsDAO();
             servletContextEvent.getServletContext().setAttribute("cDao", cDao);
 
-            UserDAO userDAO = new UserDAO("jdbc:mysql://localhost:3306/database_name_here","user_name_here",
-                    "password_here");
+            UserDAO userDAO = new UserDAO("jdbc:mysql://localhost:3306/accounts","root",
+                    "rootroot");
             servletContextEvent.getServletContext().setAttribute("usersDAO",userDAO);
             UserBuilder userBuilder = new UserBuilder(userDAO);
             servletContextEvent.getServletContext().setAttribute("userBuilder",userBuilder);
@@ -37,7 +37,7 @@ public class ContextListener implements ServletContextListener {
             servletContextEvent.getServletContext().setAttribute("rooms",rooms);
 
             // !!!!!! Enter the path of the project here !!!!!!
-            File file = new File("PROJECT_PATH_HERE!!!/monopoly/src/rules.txt");
+            File file = new File("/home/cking01201/Desktop/finalproject/final-project-monopoly/monopoly/src/rules.txt");
             Scanner scanner = new Scanner(file);
             String rules = "";
             while (scanner.hasNextLine()) rules += scanner.nextLine() + "<br>";

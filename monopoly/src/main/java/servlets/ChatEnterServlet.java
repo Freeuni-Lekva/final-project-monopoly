@@ -8,6 +8,11 @@ import java.io.IOException;
 
 public class ChatEnterServlet extends HttpServlet {
     @Override
+    protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
+        httpServletRequest.getRequestDispatcher("/WEB-INF/chatEnter.html").forward(httpServletRequest, httpServletResponse);
+    }
+
+    @Override
     protected void doPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
         httpServletRequest.getRequestDispatcher("/WEB-INF/chatEnter.html").forward(httpServletRequest, httpServletResponse);
     }

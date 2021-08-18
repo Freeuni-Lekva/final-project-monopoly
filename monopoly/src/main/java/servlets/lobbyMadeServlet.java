@@ -14,6 +14,8 @@ import java.util.HashMap;
 
 @WebServlet("/lobbyMade")
 public class lobbyMadeServlet extends HttpServlet {
+
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {

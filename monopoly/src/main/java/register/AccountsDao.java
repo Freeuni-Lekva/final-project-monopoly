@@ -10,9 +10,9 @@ public class AccountsDao {
 
     public AccountsDao() throws SQLException{
         BasicDataSource dSource = new BasicDataSource();
-        dSource.setUrl("jdbc:mysql://localhost:3306/database_name_here");
-        dSource.setUsername("user_name_here");
-        dSource.setPassword("password_here");
+        dSource.setUrl("jdbc:mysql://localhost:3306/accounts");
+        dSource.setUsername("root");
+        dSource.setPassword("rootroot");
         con = dSource.getConnection();
     }
 

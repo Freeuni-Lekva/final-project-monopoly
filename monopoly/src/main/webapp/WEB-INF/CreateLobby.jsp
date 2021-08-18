@@ -18,11 +18,31 @@
         <%
         UserBuilder ub = (UserBuilder) getServletConfig().getServletContext().getAttribute("userBuilder");
         ArrayList<String> friends = ub.getInstance((String)request.getSession().getAttribute("username")).getFriends();
-        for (String friend : friends) {%>
-        <li><input type="checkbox" name="<%=friend%>"> <%=friend%></li>
+        for (int i = 0; i < friends.size(); i++) {
+        %>
+        <li><input type="checkbox" class = "checkboxes" onclick="limitPlayers(<%=i%>)" name="<%=friends.get(i)%>"> <%=friends.get(i)%></li>
 
         <%}%></ul>
-        <input id="create" type="submit" value="Create!">
+        <input id="create" type="submit" value="Create!" disabled>
     </form>
+    <script>
+        function limitPlayers(checkboxNum) {
+            let checked = 0;
+            let checkBoxes = document.querySelectorAll('.checkboxes');
+            for(let i = 0; i < checkBoxes.length; i++) {
+                if(checkBoxes[i].checked) {
+                    checked++;
+                }
+            }
+            if(checked > 7) {
+                checkBoxes[checkboxNum].checked = false;
+                alert("The maximum number of players is 8");
+            } else if(checked == 0){
+                document.getElementById('create').disabled = true;
+            } else {
+                document.getElementById('create').disabled = false;
+            }
+        }
+    </script>
 </body>
 </html>
