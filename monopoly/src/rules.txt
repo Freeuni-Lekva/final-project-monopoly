@@ -1,0 +1,81 @@
+1. General Information: Monopoly is played by 2-8 players. Each player starts with 1500$ and the goal is to make everyone else go bankrupt
+(rule 8) and be the last man standing.
+
+2. The Bank: At the beginning of the game the bank owns every purchasable card, as well as either an infinite amount of
+houses and hotels and always has unlimited amount of money. Players, when possible, can purchase all kinds of property from
+the bank, mortgage or lift mortgage from their property in the bank (rule 6) and pay or receive money from the bank.
+
+3. Turn Order: The turn order is randomised by the program at the start of the game.
+
+4. Turns: Players start on the "GO" tile. On their turn, each player must roll the dice and move the number of spaces indicated by
+the dice, if they roll a pair, they get to roll again, but if a player rolls a pair for the third time on a single turn, they go to
+jail instead (rule 5, E). At almost any point on their turn each player can manage their property (rule 6) or offer resource exchange
+deals (rule 7) to any other player as many times as they want.
+
+
+
+
+5. Types of tiles:
+
+A. "GO": The "GO" tile is the starting tile. Every time a player passes or lands on the "GO" tile, they receive 200$.
+
+B. Property tiles: Property tiles are all tiles with coloured heads. When landing on a property owned by the bank (a property that has
+not yet been purchased by any player), the player can pay the amount of money displayed on the property tile to purchase the property.
+If the property is already owned by another player, then the current player has to pay the specified rent to the owner (rule 6).
+Nothing happens if a player lands on their own property. Properties can never be sold back to the bank while the player is still in the
+game.
+
+C. "Community Chest" and "Chance": Both are random events, if a player lands on the "Community Chest" or "Chance" tile, they randomly get
+one of the 16 cards from the "Community Chest" or the "Chance" pile respectively and immediately have to perform whatever is written on
+them (unless it is the "Get Out of Jail for Free" card, in which case they keep the card until they decide to use it). If that card says
+"Pay" or "Receive" it means paying or receiving money from the bank.
+
+D. "Go To Jail": After landing on this tile, the player will be transported to the jail. In this case, the player will NOT pass "GO"
+and will not receive 200$.
+
+E. "In Jail/Just Visiting": If a player rolls the dice and lands on this tile, nothing  will happen, since they are "Just Visiting".
+However, if they end up being sent to jail by any other means, they are stuck in the jail and cannot move until they are able to leave.
+After being sent to jail, the player's turn has to end. There are three ways to get out of jail: a player can use their "Get Out
+of Jail For Free" card if they have one, pay 50$, or roll a pair on the dice. If they roll the dice but fail to get a pair, they can't
+move on that turn. If they fail to roll a pair for three consecutive turns, they MUST pay 50$ or use the Get Out Of Jail Card and then
+leave the jail. A player can make a move immediately after getting out of jail. While in jail, the players can still manage their
+properties (rule 6) and collect money  from other players.
+
+F. "Railroad": Railroads are purchased the same way as property cards (rule 5, B), can be mortgaged and players have to pay rent when
+landing on others' railroads, however, unlike property tiles, houses and hotels cannot be placed on them (rule 6), but their rent prices
+depend on how many other railroads the owner has. The more railroads a player owns, the higher their rent price is. These costs are
+displayed on the railroad cards.
+
+G. Utilities: These are "Electric Company" and "Water Works". They can be purchased in the same way as property cards (rule 5, B) and a
+rent must be paid to the owner after landing on it, but houses and hotels can't be placed on them. If a player owns one of these utilities,
+then other players that land on it have to pay the owner 4 times the amount they rolled on the dice the last time they rolled. If the
+owner of that utility owns the other utility as well, then others have to pay 10 times the amount they rolled. 
+
+H. "Income Tax": After landing here, the player has to pay the bank 200$.
+
+I. "Luxury Tax": After landing here, the player has to pay the bank 100$.
+
+J. "Free Parking": Nothing happens when landing on this tile.
+
+
+
+
+
+6. Managing property: Property tiles (rule 5, B) are grouped by their colors. Owning a full color group increases each property's
+default rent. A player can place houses and hotels on property tiles, the houses and hotels will be bought from the bank.
+Each house and hotel increases the rent for the property tile it's on. Up to 4 houses can be placed on each property tile, after that,
+a player can remove those houses and replace them with a single hotel. No more houses and hotels can be placed on the property after this.
+Both hotels and houses can be sold whenever a player decides to do so. The rent costs for each case as well as the costs of houses and
+hotels for a particular property tile are displayed on the property cards. On their turn at any point a player can mortgage any property
+in a card form (excluding "Get Out of Jail for Free") with no houses or hotels on it, which means they will keep the ownership of the
+property, but will no longer be able to place any houses and hotels or collect rent from those properties. The player will receive some
+amount of money in return which will be displayed on the card and will be able to lift the mortgage from the property after paying the
+same amount with 10% interest. 
+
+7. Exchanging resources: On their turn a player can offer a resource exchange deal to any other player as many times as they want. They
+will choose what they are willing to give and what they want to receive in exchange. This includes money and any kind of property in card
+form (including "Get Out of Jail For Free") that does not have any houses or hotels on it and is not mortgaged.
+
+8. Bankruptcy: Declaring bankruptcy means losing the game. A player can declare bankruptcy at will at any point on their turn. If they do
+so, they will give everything they own (every card, houses, hotels and all of their money) to the bank. A player will be forced to
+declare bankruptcy if they are in a debt and have no means to pay it (even if they mortgage or sell everything they have).
