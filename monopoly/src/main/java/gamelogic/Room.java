@@ -301,7 +301,7 @@ public class Room {
                 player.setEvent("unoccupied-property");
                 player.setEventMessage("You can purchase this property");
                 player.setEventCost(prCard.getCost());
-                player.setEventImagePath("../property-cards/" + prCard.getCardImageName());
+                player.setEventImagePath("../card-images/" + prCard.getCardImageName());
             } else if(cardOwners.get(cardName) != current_player_id && !prCard.isMortgaged()) {
                 int owner_id = cardOwners.get(cardName);
                 payingEventMoneyReceiverId = owner_id;
@@ -316,7 +316,7 @@ public class Room {
                 }
                 player.setEventMessage(players[owner_id].getUsername() + " owns this property." +
                         " pay " + prCard.getRent(sameColorCount));
-                player.setEventImagePath("../property-cards/" + prCard.getCardImageName());
+                player.setEventImagePath("../card-images/" + prCard.getCardImageName());
                 player.setEventCost(prCard.getRent(sameColorCount));
             }
         }  else if(TILES[tile].substring(0, 2).equals("R ")) {
@@ -327,7 +327,7 @@ public class Room {
                 player.setEvent("unoccupied-property");
                 player.setEventMessage("You can purchase this railroad");
                 player.setEventCost(rCard.getCost());
-                player.setEventImagePath("../railroad-cards/" + rCard.getCardImageName());
+                player.setEventImagePath("../card-images/" + rCard.getCardImageName());
             } else if(cardOwners.get(cardName) != current_player_id && !rCard.isMortgaged()) {
                 int owner_id = cardOwners.get(cardName);
                 payingEventMoneyReceiverId = owner_id;
@@ -340,7 +340,7 @@ public class Room {
                 }
                 player.setEventMessage(players[owner_id].getUsername() + " owns this railroad." +
                         " pay " + rCard.getRent(railroadCount));
-                player.setEventImagePath("../railroad-cards/" + rCard.getCardImageName());
+                player.setEventImagePath("../card-images/" + rCard.getCardImageName());
                 player.setEventCost(rCard.getRent(railroadCount)*railroadMultiplier);
             }
         } else if(TILES[tile].substring(0,2).equals("U ")) {
@@ -351,7 +351,7 @@ public class Room {
                 player.setEvent("unoccupied-property");
                 player.setEventMessage("You can purchase this utility");
                 player.setEventCost(uCard.getCost());
-                player.setEventImagePath("../utility-cards/" + uCard.getCardImageName());
+                player.setEventImagePath("../card-images/" + uCard.getCardImageName());
             } else if(cardOwners.get(cardName) != current_player_id && !uCard.isMortgaged()) {
                 int owner_id = cardOwners.get(cardName);
                 payingEventMoneyReceiverId = owner_id;
@@ -364,7 +364,7 @@ public class Room {
                 }
                 player.setEventMessage(players[owner_id].getUsername() + " owns this railroad." +
                         " pay " + uCard.getRent(utilityCount, firstDie + secondDie));
-                player.setEventImagePath("../railroad-cards/" + uCard.getCardImageName());
+                player.setEventImagePath("../card-images/" + uCard.getCardImageName());
                 player.setEventCost(uCard.getRent(max(utilityCount,utilityMultiplier), firstDie + secondDie));
             }
         }

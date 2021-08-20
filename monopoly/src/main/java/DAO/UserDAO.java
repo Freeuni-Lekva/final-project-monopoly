@@ -106,11 +106,6 @@ public class UserDAO {
         query.setString(1,username1);
         query.setString(2,username2);
         query.executeUpdate();
-
-        PreparedStatement query1 = connection.prepareStatement("insert into requestPairs (username1,username2) values (?,?)");
-        query1.setString(1,username2);
-        query1.setString(2,username1);
-        query1.executeUpdate();
     }
 
     public void removeRequestPair(String username1,String username2) throws Exception {
@@ -118,6 +113,7 @@ public class UserDAO {
         PreparedStatement statement = connection.prepareStatement("delete from requestPairs where username1 = ? AND username2 = ?");
         statement.setString(1,username1);
         statement.setString(2,username2);
+        statement.execute();
     }
 
     public boolean isUser(String username) throws Exception {

@@ -58,15 +58,17 @@ public class User {
     public void acceptRequest(String user){
         try {
             this.addFriend(user);
-            userDAO.removeRequestPair(this.username,user);
+            userDAO.removeRequestPair(username, user);
         } catch (Exception exception) {
             exception.printStackTrace();
         }
     }
 
+
+
     public void declineRequest(String user){
         try {
-            userDAO.removeRequestPair(this.username,user);
+            userDAO.removeRequestPair(username, user);
         } catch (Exception exception) {
             exception.printStackTrace();
         }

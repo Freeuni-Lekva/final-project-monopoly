@@ -17,7 +17,7 @@
     %>
 
     <img src="monopolian.png" alt="monopolyman" height="100%" class="monopolianman">
-    <img src="money.png" alt="moneycolor" height=300px width=400px class="money">
+    <img src="money.png" alt="moneycolor" height=500px width=400px class="money">
 
     <div class="middle-class">
         
