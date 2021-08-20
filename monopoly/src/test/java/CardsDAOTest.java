@@ -12,47 +12,47 @@ public class CardsDAOTest extends TestCase {
     public void testGetPropertyCardsData() throws SQLException {
         CardsDAO cardsDAO = new CardsDAO();
         String[][] actual = {
-                {"MEDITERRANEAN AVENUE", "mediterranean-avenue.png", "brown", "60", "2", "5", "10", "30", "90", "160",
+                {"MEDITERRANEAN-AVENUE", "mediterranean-avenue.png", "brown", "60", "2", "5", "10", "30", "90", "160",
                         "250", "30", "50", "50", "2"},
-                {"BALTIC AVENUE", "baltic-avenue.png", "brown", "60", "4", "8", "20", "60", "180", "320", "450", "30",
+                {"BALTIC-AVENUE", "baltic-avenue.png", "brown", "60", "4", "8", "20", "60", "180", "320", "450", "30",
                         "50", "50", "2"},
-                {"ORIENTAL AVENUE", "oriental-avenue.png", "lightblue", "100", "6", "12", "30", "90", "270", "400",
+                {"ORIENTAL-AVENUE", "oriental-avenue.png", "lightblue", "100", "6", "12", "30", "90", "270", "400",
                         "550", "50", "50", "50", "3"},
-                {"VERMONT AVENUE", "vermont-avenue.png", "lightblue", "100", "6", "12", "30", "90", "270", "400",
+                {"VERMONT-AVENUE", "vermont-avenue.png", "lightblue", "100", "6", "12", "30", "90", "270", "400",
                         "550", "50", "50", "50", "3"},
-                {"CONNECTICUT AVENUE", "connecticut-avenue.png", "lightblue", "120", "8", "16", "40", "100", "300",
+                {"CONNECTICUT-AVENUE", "connecticut-avenue.png", "lightblue", "120", "8", "16", "40", "100", "300",
                         "450", "600", "60", "50", "50", "3"},
-                {"ST. CHARLES PLACE", "st-charles-place.png", "pink", "140", "10", "20", "50", "150", "450", "625",
+                {"ST.-CHARLES-PLACE", "st-charles-place.png", "pink", "140", "10", "20", "50", "150", "450", "625",
                         "750", "70", "100", "100", "3"},
-                {"STATES AVENUE", "states-avenue.png", "pink", "140", "10", "20", "50", "150", "450", "625", "750",
+                {"STATES-AVENUE", "states-avenue.png", "pink", "140", "10", "20", "50", "150", "450", "625", "750",
                         "70", "100", "100", "3"},
-                {"VIRGINIA AVENUE", "virginia-avenue.png", "pink", "160", "12", "24", "60", "180", "500", "700", "900",
+                {"VIRGINIA-AVENUE", "virginia-avenue.png", "pink", "160", "12", "24", "60", "180", "500", "700", "900",
                         "80", "100", "100", "3"},
-                {"ST. JAMES PLACE", "st-james-place.png", "orange", "180", "14", "28", "70", "200", "550", "750",
+                {"ST.-JAMES-PLACE", "st-james-place.png", "orange", "180", "14", "28", "70", "200", "550", "750",
                         "950", "90", "100", "100", "3"},
-                {"TENNESSEE AVENUE", "tennessee-avenue.png", "orange", "180", "14", "28", "70", "200", "550", "750",
+                {"TENNESSEE-AVENUE", "tennessee-avenue.png", "orange", "180", "14", "28", "70", "200", "550", "750",
                         "950", "90", "100", "100", "3"},
-                {"NEW YORK AVENUE", "new-york-avenue.png", "orange", "200", "16", "32", "80", "220", "600", "800",
+                {"NEW-YORK-AVENUE", "new-york-avenue.png", "orange", "200", "16", "32", "80", "220", "600", "800",
                         "1000", "100", "100", "100", "3"},
-                {"KENTUCKY AVENUE", "kentucky-avenue.png", "red", "220", "18", "36", "90", "250", "700", "875", "1050",
+                {"KENTUCKY-AVENUE", "kentucky-avenue.png", "red", "220", "18", "36", "90", "250", "700", "875", "1050",
                         "110", "150", "150", "3"},
-                {"INDIANA AVENUE", "indiana-avenue.png", "red", "220", "18", "36", "90", "250", "700", "875", "1050",
+                {"INDIANA-AVENUE", "indiana-avenue.png", "red", "220", "18", "36", "90", "250", "700", "875", "1050",
                         "110", "150", "150", "3"},
-                {"ILLINOIS AVENUE", "illinois-avenue.png", "red", "240", "20", "40", "100", "300", "750", "925",
+                {"ILLINOIS-AVENUE", "illinois-avenue.png", "red", "240", "20", "40", "100", "300", "750", "925",
                         "1100", "120", "150", "150", "3"},
-                {"ATLANTIC AVENUE", "atlantic-avenue.png", "yellow", "260", "22", "44", "110", "330", "800", "975",
+                {"ATLANTIC-AVENUE", "atlantic-avenue.png", "yellow", "260", "22", "44", "110", "330", "800", "975",
                         "1150", "130", "150", "150", "3"},
-                {"VENTNOR AVENUE", "ventnor-avenue.png", "yellow", "260", "22", "44", "110", "330", "800", "975",
+                {"VENTNOR-AVENUE", "ventnor-avenue.png", "yellow", "260", "22", "44", "110", "330", "800", "975",
                         "1150", "130", "150", "150", "3"},
-                {"MARVIN GARDENS", "marvin-gardens.png", "yellow", "280", "24", "48", "120", "360", "850", "1025",
+                {"MARVIN-GARDENS", "marvin-gardens.png", "yellow", "280", "24", "48", "120", "360", "850", "1025",
                         "1200", "140", "150", "150", "3"},
-                {"PACIFIC AVENUE", "pacific-avenue.png", "green", "300", "26", "52", "130", "390", "900", "1100",
+                {"PACIFIC-AVENUE", "pacific-avenue.png", "green", "300", "26", "52", "130", "390", "900", "1100",
                         "1275", "150", "200", "200", "3"},
-                {"NORTH CAROLINA AVENUE", "north-carolina-avenue.png", "green", "300", "26", "52", "130", "390", "900",
+                {"NORTH-CAROLINA-AVENUE", "north-carolina-avenue.png", "green", "300", "26", "52", "130", "390", "900",
                         "1100", "1275", "150", "200", "200", "3"},
-                {"PENNSYLVANIA AVENUE", "pennsylvania-avenue.png", "green", "320", "28", "56", "150", "450", "1000",
+                {"PENNSYLVANIA-AVENUE", "pennsylvania-avenue.png", "green", "320", "28", "56", "150", "450", "1000",
                         "1200", "1400", "160", "200", "200", "3"},
-                {"PARK PLACE", "park-place.png", "blue", "350", "35", "70", "175", "500", "1100", "1300", "1500",
+                {"PARK-PLACE", "park-place.png", "blue", "350", "35", "70", "175", "500", "1100", "1300", "1500",
                         "175", "200", "200", "2"},
                 {"BOARDWALK", "boardwalk.png", "blue", "400", "50", "100", "200", "600", "1400", "1700", "2000", "200",
                         "200", "200", "2"}
@@ -64,10 +64,10 @@ public class CardsDAOTest extends TestCase {
     public void testGetRailroadCardsData() throws SQLException {
         CardsDAO cardsDAO = new CardsDAO();
         String[][] actual = {
-                {"READING RAILROAD", "reading-railroad.png", "200", "25", "50", "100", "200", "100"},
-                {"PENNSYLVANIA RAILROAD", "pennsylvania-railroad.png", "200", "25", "50", "100", "200", "100"},
-                {"B. & O. RAILROAD", "b&o-railroad.png", "200", "25", "50", "100", "200", "100"},
-                {"SHORT LINE", "short-line.png", "200", "25", "50", "100", "200", "100"}
+                {"READING-RAILROAD", "reading-railroad.png", "200", "25", "50", "100", "200", "100"},
+                {"PENNSYLVANIA-RAILROAD", "pennsylvania-railroad.png", "200", "25", "50", "100", "200", "100"},
+                {"B.-&-O.-RAILROAD", "b&o-railroad.png", "200", "25", "50", "100", "200", "100"},
+                {"SHORT-LINE", "short-line.png", "200", "25", "50", "100", "200", "100"}
         };
         assertTrue(Arrays.deepEquals(actual, cardsDAO.getRailroadCardsData()));
     }
@@ -76,8 +76,8 @@ public class CardsDAOTest extends TestCase {
     public void testGetUtilityCardsData() throws SQLException {
         CardsDAO cardsDAO = new CardsDAO();
         String[][] actual = {
-                {"ELECTRIC COMPANY", "electric-company.png", "150", "75"},
-                {"WATER WORKS", "water-works.png", "150", "75"}
+                {"ELECTRIC-COMPANY", "electric-company.png", "150", "75"},
+                {"WATER-WORKS", "water-works.png", "150", "75"}
         };
         assertTrue(Arrays.deepEquals(actual, cardsDAO.getUtilityCardsData()));
     }

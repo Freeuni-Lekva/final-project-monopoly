@@ -14,7 +14,7 @@ public class PropertyCardTest extends TestCase {
         String[] data = {"N", "img.png", "brown", "200", "10", "50", "51", "52", "53", "54", "70", "100",
                 "20", "30", "2"};
         this.data = data;
-        property = new PropertyCard(data, 10);
+        property = new PropertyCard(data);
     }
 
     @Test
@@ -24,18 +24,20 @@ public class PropertyCardTest extends TestCase {
         assertEquals("brown", property.getCardColor());
         assertEquals(200, property.getCost());
         assertEquals(100, property.getMortgageValue());
+        assertEquals(110, property.getMortgageLiftCost());
         assertEquals(20, property.getHouseCost());
         assertEquals(30, property.getHotelCost());
         assertEquals(0, property.getNumHouses());
 
         String[] newData = {"a", "b", "lightblue", "1000", "0", "-5", "-4", "-3", "-2", "-1", "10", "11",
                 "12", "13", "2"};
-        property = new PropertyCard(newData, 10);
+        property = new PropertyCard(newData);
         assertEquals("a", property.getCardName());
         assertEquals("b", property.getCardImageName());
         assertEquals("lightblue", property.getCardColor());
         assertEquals(1000, property.getCost());
         assertEquals(11, property.getMortgageValue());
+        assertEquals(12, property.getMortgageLiftCost());
         assertEquals(12, property.getHouseCost());
         assertEquals(13, property.getHotelCost());
         assertEquals(0, property.getNumHouses());
@@ -115,7 +117,7 @@ public class PropertyCardTest extends TestCase {
     }
 
     @Test
-    public void testMortgageAndInterest() {
+    public void testMortgage() {
         assertTrue(!property.isMortgaged());
         property.setMortgage(true);
         assertTrue(property.isMortgaged());
@@ -125,40 +127,6 @@ public class PropertyCardTest extends TestCase {
         assertTrue(!property.isMortgaged());
         property.setMortgage(false);
         assertTrue(!property.isMortgaged());
-
-        assertEquals(200, property.getCost());
-        property.setMortgage(true);
-        assertEquals(110, property.getCost());
-        property.increasePercentage();
-        assertEquals(121, property.getCost());
-        property.increasePercentage();
-        assertEquals(133, property.getCost());
-        property.setPercentageToDefault();
-        assertEquals(110, property.getCost());
-
-        Random rand = new Random();
-        int randNum = rand.nextInt(20) + 20;
-        double actual = 110;
-        for (int i = 0; i < randNum; i++) {
-            property.increasePercentage();
-            actual = actual * 1.1;
-        }
-        assertEquals((int)actual, property.getCost());
-        property.setMortgage(false);
-        assertEquals(200, property.getCost());
-        property.setMortgage(true);
-        assertEquals(110, property.getCost());
-
-        property = new PropertyCard(data, 17);
-        assertEquals(200, property.getCost());
-        property.setMortgage(true);
-        assertEquals(117, property.getCost());
-        property.increasePercentage();
-        assertEquals(136, property.getCost());
-        property.setMortgage(false);
-        assertEquals(200, property.getCost());
-        property.setMortgage(true);
-        assertEquals(117, property.getCost());
     }
 
 }
